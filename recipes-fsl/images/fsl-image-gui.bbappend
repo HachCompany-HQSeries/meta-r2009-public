@@ -22,4 +22,6 @@ IMAGE_INSTALL += " \
     openssh-sftp-server \
     rsync \
     i2c-tools \
+    \
+    r1701-apps \
 "
