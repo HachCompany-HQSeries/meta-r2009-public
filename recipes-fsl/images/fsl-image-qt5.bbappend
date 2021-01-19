@@ -12,5 +12,7 @@ IMAGE_INSTALL += " \
     rsync \
     i2c-tools \
     \
+    htop \
+    \
     r1701-apps \
 "
