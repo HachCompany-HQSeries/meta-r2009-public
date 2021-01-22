@@ -10,8 +10,20 @@ fi
 . ./oe-init-build-env ${BUILDDIR}
 
 echo ""
-echo "HACH provides the following image recipes for r2009 project:"
-echo "   * fsl-image-gui: Based on Variscite fsl-image-gui"
+echo "HACH provides the following image recipes for open source purpose."
+echo ""
+echo "    ==============================================================="
+echo "    NOTE:: These both image does not have HACH propriatery recipes."
+echo "    ==============================================================="
+echo ""
+echo "GUI DISTRO is defined in 'local.conf' file."
+echo ""
+echo "   * hqseries-lab-image: Full GUI/no GUI Image. That cab be x11 or xwayland or framebuffer or wayland."
+echo "     ------------------"
+echo ""
+echo "   * hqseries-lab-image-qt: Offer Qt support. That cab be x11 or xwayland or framebuffer or wayland."
+echo "     ------------------"
+echo ""
 echo ""
 
 if [ $FIRST_TIME -eq 1 ]; then

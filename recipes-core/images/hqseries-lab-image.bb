@@ -1,15 +1,14 @@
 # Copyright (C) 2021 HACH Company
 # Released under the MIT license (see COPYING.MIT for the terms)
 
-DESCRIPTION = "HACH Image for HQ Series Lab meters."
+DESCRIPTION = "HACH Image for HQ Series Lab meters for open source purpose."
 LICENSE = "MIT"
 
 inherit core-image features_check
 
 # Remove distribution feature.
-DISTRO_FEATURES_remove += " x11 virtualization"
-DISTRO_FEATURES_append += " wayland"
-REQUIRED_DISTRO_FEATURES = "wayland"
+# NOTE:: For some reason if we use just wayland as distro then GUI application will fail to show up on display. We have to use XWAYLAND for that to work.
+# DISTRO_FEATURES_remove += " virtualization"
 
 # QEMU
 #QEMU_TARGETS = "arm64 x86_64"
@@ -45,7 +44,7 @@ IMAGE_INSTALL += " \
     p7zip \
     tzdata \
     \
-    r1701-apps \
+    nodejs \
 "
 
 CORE_IMAGE_EXTRA_INSTALL += " \
@@ -53,7 +52,9 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	packagegroup-fsl-gstreamer1.0 \
 	${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'xterm', '', d)} \
 	${@bb.utils.contains('DISTRO_FEATURES', 'x11 wayland', 'weston-xwayland', '', d)} \
-	${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'weston-init', '', d)} \
+	${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'weston-init', \
+	   bb.utils.contains('DISTRO_FEATURES',     'x11', 'packagegroup-core-x11-sato-games', \
+							 '', d), d)} \
 	tcf-agent \
 "
 
