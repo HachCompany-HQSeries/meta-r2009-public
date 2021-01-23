@@ -7,7 +7,7 @@ software =
 
 		files: (
 			{
-				filename = "r2009-image-swupdate-imx8mm-var-dart.tar.gz";
+				filename = "hqseries-lab-image-imx8mm-var-dart.tar.gz";
 				type = "archive";
 				compressed = true;
 				device = "/dev/update";
