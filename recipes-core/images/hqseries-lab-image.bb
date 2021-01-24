@@ -45,6 +45,7 @@ IMAGE_INSTALL += " \
     tzdata \
     \
     nodejs \
+    nodejs-npm \
 "
 
 CORE_IMAGE_EXTRA_INSTALL += " \
