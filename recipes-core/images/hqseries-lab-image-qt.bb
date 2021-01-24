@@ -69,4 +69,4 @@ IMAGE_INSTALL_remove += " \
 "
 
 # export base name.
-export IMAGE_BASENAME = "hqseries-lab-image-qt"
+#export IMAGE_BASENAME = "hqseries-lab-image-qt"
