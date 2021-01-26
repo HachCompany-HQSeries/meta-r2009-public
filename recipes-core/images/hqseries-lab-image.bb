@@ -46,10 +46,26 @@ IMAGE_INSTALL += " \
     \
     nodejs \
     nodejs-npm \
+    \
+    fuse\
+    zlib \
+    \
+    libxscrnsaver \
+    nss \
+    cups \
+    gtk+3 \
+    \
+    at-spi2-atk \
+    imx-gpu-viv \
+    \
+    libxcomposite \
+    libxrandr \
+    \
 "
 
+#packagegroup-core-x11-base
 CORE_IMAGE_EXTRA_INSTALL += " \
-	packagegroup-core-full-cmdline \
+    packagegroup-core-full-cmdline \
 	packagegroup-fsl-gstreamer1.0 \
 	${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'xterm', '', d)} \
 	${@bb.utils.contains('DISTRO_FEATURES', 'x11 wayland', 'weston-xwayland', '', d)} \
