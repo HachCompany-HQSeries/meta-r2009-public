@@ -61,6 +61,7 @@ IMAGE_INSTALL += " \
     libxcomposite \
     libxrandr \
     \
+    chromium-ozone-wayland \
 "
 
 #packagegroup-core-x11-base
