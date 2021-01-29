@@ -1,8 +1,4 @@
-#PACKAGECONFIG[kiosk-mode] = ""
-
 # Add Kiosk mode enabled by default with special commands args.
-#CHROMIUM_EXTRA_ARGS_append = " ${@bb.utils.contains('PACKAGECONFIG', 'kiosk-mode', '--kiosk --no-first-run --incognito --in-process-gpu --start-fullscreen', '', d)}"
-
-#GN_ARGS += "\
-#        use_kiosk-mode=true \
-#"
+PACKAGECONFIG += "kiosk-mode"
+#TODO: create a user for running chromium and remove the --no-sandbox argument.
+CHROMIUM_EXTRA_ARGS_append = " --in-process-gpu --incognito --no-first-run --no-sandbox"
